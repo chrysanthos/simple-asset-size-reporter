@@ -19,7 +19,7 @@ jobs:
     - uses: actions/checkout@v2-beta
       with:
         fetch-depth: 0
-    - uses: chrysanthos/simple-asset-size-reporter@v1
+    - uses: chrysanthos/simple-asset-size-reporter@1.0.0
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
 ```
