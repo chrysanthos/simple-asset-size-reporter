@@ -29,19 +29,19 @@ jobs:
 ```
 
 ### Usage
-#####repo-token (Required)
+##### repo-token (Required)
 The github token to be used.
 
-####files (Optional)
+#### files (Optional)
 The asset files to be checked. This needs to be a json encoded array of regex paths.
 
 **Default:** '["public/js/*.js", "public/css/*.css"]'. 
 
-####build-assets (Optional)
+#### build-assets (Optional)
 In case you do not commit the compiled assets inside your repository and need compiling this the place to put your build command.
 When this is set to `auto` it will detect whether you use `npm` or `yarn` and run the appropriate command (i.e. `npm run prod` or `yarn run prod`) to build your assets.
 
-####with-same (Optional)
+#### with-same (Optional)
 If you want the report to include the files that their size did not change set this to 'true'.
 
 ### Full example
