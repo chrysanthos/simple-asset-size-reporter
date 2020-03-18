@@ -1,6 +1,9 @@
 name: 'Simple Asset Size'
 description: 'Find out how much of a change to your asset size a PR will have'
 author: 'Chrysanthos Prodromou'
+branding:
+  icon: 'arrow-up'
+  color: 'yellow'
 inputs:
   repo-token:
     required: true
