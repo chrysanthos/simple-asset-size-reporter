@@ -23,3 +23,6 @@ jobs:
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
 ```
+
+### Credits
+Initial work: [simplabs/ember-asset-size-action](https://github.com/simplabs/ember-asset-size-action)
