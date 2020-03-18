@@ -1,8 +1,8 @@
-# Simple Asset Size Reporter
+## Simple Asset Size Reporter
 
 This action will calculate the size of your assets for each PR and comment when the filesize is bigger than the one in the master branch.
 
-## Example usage
+### Example usage
 
 Create a file named `.github/workflows/simple-size-check.yml` in your repo and add the following:
 
