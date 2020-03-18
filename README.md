@@ -35,7 +35,7 @@ The github token to be used.
 #### files (Optional)
 The asset files to be checked. This needs to be a json encoded array of regex paths.
 
-**Default:** '["public/js/*.js", "public/css/*.css"]'. 
+_Defaults to: '["public/js/*.js", "public/css/*.css"]'._ 
 
 #### build-assets (Optional)
 In case you do not commit the compiled assets inside your repository and need compiling this the place to put your build command.
