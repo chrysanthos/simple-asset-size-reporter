@@ -1,0 +1,17 @@
+name: "PR Checks"
+on: [pull_request, push]
+
+jobs:
+  check_pr:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: "npm ci"
+      run: npm ci
+#
+#    - name: "lint"
+#      run: npx eslint .
+#
+#    - name: "npm test"
+#      run: npm test

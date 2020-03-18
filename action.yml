@@ -1,0 +1,22 @@
+name: 'Simple Asset Size'
+description: 'Find out how much of a change to your asset size a PR will have'
+author: 'Chrysanthos Prodromou'
+inputs:
+  repo-token:
+    required: true
+    description: 'The GITHUB_TOKEN secret'
+  files:
+    description: 'The files to check'
+    required: false
+    default: '["public/js/*.js", "public/css/*.css"]'
+  with-same:
+    required: false
+    description: 'Whether you want to include same-size files'
+    default: 'false'
+  build-assets:
+    required: false
+    description: 'If you want to build your assets, please include here the command to be run.'
+    default: 'false'
+runs:
+  using: 'node12'
+  main: 'index.js'

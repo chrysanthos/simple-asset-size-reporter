@@ -1,0 +1,38 @@
+{
+  "name": "simple-asset-size-reporter",
+  "version": "0.0.1",
+  "private": true,
+  "description": "A Github Action to easily identify asset size increase (or decrease) in your PRs",
+  "main": "index.js",
+  "scripts": {
+    "test": "cross-env NODE_ENV=TEST GITHUB_REPOSITORY=simplabs/ember-asset-size-action mocha -r esm",
+    "prod": "cross-env NODE_ENV=TEST GITHUB_REPOSITORY=simplabs/ember-asset-size-action mocha -r esm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrysanthos/simple-asset-size-reporter.git"
+  },
+  "keywords": [
+    "actions",
+    "node",
+    "setup"
+  ],
+  "author": "Chrysanthos Prodromou",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.2.3",
+    "@actions/exec": "^1.0.3",
+    "@actions/github": "^1.1.0",
+    "asset-size-reporter": "^0.1.0",
+    "esm": "^3.2.25",
+    "pretty-bytes": "^5.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "cross-env": "^6.0.3",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "mocha": "^6.2.2"
+  }
+}
