@@ -28,6 +28,9 @@ jobs:
         build-assets: 'false'
 ```
 
+![Comment example on a PR](https://raw.githubusercontent.com/chrysanthos/simple-asset-size-reporter/master/docs/example.png)
+
+
 ### Usage
 ##### repo-token (Required)
 The github token to be used.
