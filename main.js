@@ -30,12 +30,14 @@ async function run() {
     const masterAssets = await getAssetSizes(files);
 
     const fileDiffs = diffSizes(normaliseFingerprint(masterAssets), normaliseFingerprint(prAssets));
+    let body;
     try {
+      body = buildOutputText(fileDiffs, withSame);
       await octokit.issues.createComment({
         owner: context.repo.owner,
         repo: context.repo.repo,
         issue_number: pullRequest.number,
-        body: buildOutputText(fileDiffs, withSame),
+        body,
       });
     } catch (e) {
       console.log('Could not create a comment automatically.');
