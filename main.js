@@ -27,6 +27,7 @@ async function run() {
     const prAssets = await getAssetSizes(files);
 
     await exec(`git checkout ${pullRequest.base.sha}`);
+    await buildAssets(buildAssetsCommand);
     const masterAssets = await getAssetSizes(files);
 
     const fileDiffs = diffSizes(normaliseFingerprint(masterAssets), normaliseFingerprint(prAssets));
