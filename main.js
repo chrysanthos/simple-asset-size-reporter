@@ -1,6 +1,6 @@
 import { getInput, setFailed } from '@actions/core';
 import { exec } from '@actions/exec';
-import { GitHub, context } from '@actions/github';
+import { getOctokit, context } from '@actions/github';
 
 import {
   normaliseFingerprint,
@@ -20,7 +20,7 @@ async function run() {
     const withSame = getInput('with-same', { required: false }) === 'true';
     const buildAssetsCommand = getInput('build-assets', { required: false });
 
-    octokit = new GitHub(myToken);
+    const octokit = getOctokit(myToken)
     const pullRequest = await getPullRequest(context, octokit);
 
     await buildAssets(buildAssetsCommand);
@@ -31,9 +31,8 @@ async function run() {
     const masterAssets = await getAssetSizes(files);
 
     const fileDiffs = diffSizes(normaliseFingerprint(masterAssets), normaliseFingerprint(prAssets));
-    let body;
+    let body= buildOutputText(fileDiffs, withSame);
     try {
-      body = buildOutputText(fileDiffs, withSame);
       await octokit.issues.createComment({
         owner: context.repo.owner,
         repo: context.repo.repo,
@@ -43,8 +42,12 @@ async function run() {
     } catch (e) {
       console.log('Could not create a comment automatically.');
 
-      console.log(`Copy and paste the following into a comment yourself if you want to still show the diff:
-${body}`);
+      console.log(`Copy and paste the following into a comment yourself if you want to still show the diff:`);
+      console.log(body);
+
+      console.log('')
+      console.log('Exception:')
+      console.log(e)
     }
   } catch (error) {
     setFailed(error.message);
