@@ -1,3 +1,6 @@
+## Abandoned
+This project is no longer being actively developed. Please use https://github.com/ai/size-limit instead.
+
 ## Simple Asset Size Reporter
 
 This action will calculate the size of your assets for each PR and comment when the filesize is bigger than the one in the master branch.
